@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+curl -s https://api.github.com/repos/nerdvegas/rez/releases | \
+jq 'reverse' | \
+jq -r '.[] | "# NAME: " + .name + "\n\n" + .body + "\n---\n\n"' | \
+cmark -t html | \
+w3m -dump -T text/html
+
