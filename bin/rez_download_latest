@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-LATEST=$(curl -s https://api.github.com/repos/nerdvegas/rez/releases/latest | jq -r '.name' | awk '{print $1}')
-LOCATION=$(curl -s https://api.github.com/repos/nerdvegas/rez/releases/latest | jq -r '.zipball_url')
-curl -L -o rez_${LATEST}.zip $LOCATION

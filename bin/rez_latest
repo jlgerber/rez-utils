@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-curl -s https://api.github.com/repos/nerdvegas/rez/releases/latest | jq -r '.name'
